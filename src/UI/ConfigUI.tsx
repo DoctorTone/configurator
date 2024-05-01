@@ -1,5 +1,12 @@
 import Checkbox from "@mui/material/Checkbox";
-import { FormGroup, FormControlLabel } from "@mui/material";
+import {
+  FormGroup,
+  FormControlLabel,
+  FormControl,
+  FormLabel,
+  RadioGroup,
+  Radio,
+} from "@mui/material";
 import useStore from "../state/store";
 
 const ConfigUI = () => {
@@ -17,6 +24,21 @@ const ConfigUI = () => {
           control={<Checkbox checked={isRotating} onChange={toggleRotate} />}
           label="Auto-rotate"
         />
+        <FormControl>
+          <FormLabel id="demo-radio-buttons-group-label">Pattern</FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="ink"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel
+              value="ink"
+              control={<Radio />}
+              label="Ink blot"
+            />
+            <FormControlLabel value="zebra" control={<Radio />} label="Zebra" />
+          </RadioGroup>
+        </FormControl>
       </FormGroup>
     </div>
   );
