@@ -9,16 +9,20 @@ body,
   overflow: hidden;
   color: black;
 }
-
 body {
   background: #e7e5c0;
 }
-
 .panel {
   position: absolute;
 }
-
+.title p {
+  font-size: 0.875em;
+}
 #configUI {
   top: 30%;
   right: 20%;
+}
+#configTitle {
+  bottom: 5%;
+  left: 5%;
 }
