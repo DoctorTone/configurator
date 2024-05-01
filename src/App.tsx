@@ -1,15 +1,19 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Lights from "./Scenes/Lights";
 import Configurator from "./components/Configurator";
+import { SCENE } from "./state/Config";
 
 function App() {
   return (
     <>
-      <Canvas camera={{ position: [0, 0, 5] }}>
-        <Lights />
+      <Canvas camera={{ position: SCENE.cameraPosition }}>
         <Configurator />
-        <OrbitControls enablePan={true} enableRotate={true} />
+        <OrbitControls
+          makeDefault
+          enablePan={true}
+          enableRotate={true}
+          enableDamping={true}
+        />
       </Canvas>
     </>
   );

@@ -29,10 +29,11 @@ export function Vase(props: JSX.IntrinsicElements["group"]) {
     <group {...props} dispose={null}>
       <mesh
         geometry={nodes.vase_c.geometry}
-        material={materials.vase}
         rotation={[Math.PI / 2, 0, -2.356]}
         scale={0.1}
-      />
+      >
+        <meshStandardMaterial color={"purple"} />
+      </mesh>
     </group>
   );
 }
