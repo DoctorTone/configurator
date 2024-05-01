@@ -4,7 +4,7 @@ import { Stage } from "@react-three/drei";
 const Configurator = () => {
   return (
     <Stage
-      adjustCamera={1.5}
+      adjustCamera={1.3}
       intensity={0.5}
       shadows="contact"
       environment="city"

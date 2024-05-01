@@ -30,8 +30,13 @@ const ConfigUI = () => {
           control={<Checkbox checked={isRotating} onChange={toggleRotate} />}
           label="Auto-rotate"
         />
-        <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label">Pattern</FormLabel>
+        <FormControl sx={{ mt: 3 }}>
+          <FormLabel
+            sx={{ fontWeight: "bold", fontSize: "h6.fontSize" }}
+            id="demo-radio-buttons-group-label"
+          >
+            Pattern:
+          </FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="ink"
@@ -44,6 +49,16 @@ const ConfigUI = () => {
               label="Ink blot"
             />
             <FormControlLabel value="zebra" control={<Radio />} label="Zebra" />
+            <FormControlLabel
+              value="flowers"
+              control={<Radio />}
+              label="Flowers"
+            />
+            <FormControlLabel
+              value="orange"
+              control={<Radio />}
+              label="Orange"
+            />
           </RadioGroup>
         </FormControl>
       </FormGroup>

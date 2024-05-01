@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.2.16 .\vases.gltf --transform -t
 Files: .\vases.gltf [320.93KB] > C:\Users\tony\Documents\Github\configurator\public\models\vases-transformed.glb [28.35KB] (91%)
 */
 
-import { Mesh, MeshStandardMaterial, Group } from "three";
+import { Mesh, MeshStandardMaterial, Group, Texture } from "three";
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
@@ -21,34 +21,24 @@ type GLTFResult = GLTF & {
   };
 };
 
-type ContextType = Record<
-  string,
-  React.ForwardRefExoticComponent<JSX.IntrinsicElements["mesh"]>
->;
+interface Pattern {
+  [key: string]: Texture;
+}
 
 export function Vase(props: JSX.IntrinsicElements["group"]) {
   const { nodes } = useGLTF("./models/vases.glb") as GLTFResult;
-  const patterns = useTexture({
+  const patterns: Pattern = useTexture({
     ink: "./textures/alcohol.jpg",
     zebra: "./textures/splatter.jpg",
+    flowers: "./textures/flowers.jpg",
+    orange: "./textures/orange.jpg",
   });
   const isRotating = useStore((state) => state.isRotating);
   const currentPattern = useStore((state) => state.currentPattern);
   const groupRef = useRef<Group>(null);
 
   const getCurrentPattern = () => {
-    switch (currentPattern) {
-      case "ink":
-        return patterns.ink;
-        break;
-
-      case "zebra":
-        return patterns.zebra;
-        break;
-
-      default:
-        return patterns.ink;
-    }
+    return patterns[currentPattern];
   };
 
   useFrame((_, delta) => {
