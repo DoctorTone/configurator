@@ -32,7 +32,7 @@ export function Vase(props: JSX.IntrinsicElements["group"]) {
         rotation={[Math.PI / 2, 0, -2.356]}
         scale={0.1}
       >
-        <meshStandardMaterial color={"purple"} />
+        <meshStandardMaterial color={"lightblue"} />
       </mesh>
     </group>
   );
