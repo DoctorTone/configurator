@@ -6,7 +6,7 @@ Files: .\vases.gltf [320.93KB] > C:\Users\tony\Documents\Github\configurator\pub
 
 import * as THREE from "three";
 import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, useTexture } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
@@ -25,6 +25,7 @@ type ContextType = Record<
 
 export function Vase(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("./models/vases.glb") as GLTFResult;
+  const pattern = useTexture("./textures/alcohol.jpg");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -32,7 +33,7 @@ export function Vase(props: JSX.IntrinsicElements["group"]) {
         rotation={[Math.PI / 2, 0, -2.356]}
         scale={0.1}
       >
-        <meshStandardMaterial color={"lightblue"} />
+        <meshStandardMaterial color={"lightblue"} map={pattern} roughness={0} />
       </mesh>
     </group>
   );
