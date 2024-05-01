@@ -8,13 +8,19 @@ import {
   Radio,
 } from "@mui/material";
 import useStore from "../state/store";
+import { ChangeEvent } from "react";
 
 const ConfigUI = () => {
   const setRotating = useStore((state) => state.setRotating);
   const isRotating = useStore((state) => state.isRotating);
+  const setCurrentPattern = useStore((state) => state.setCurrentPattern);
 
   const toggleRotate = () => {
     setRotating(!isRotating);
+  };
+
+  const updatePattern = (event: ChangeEvent<HTMLInputElement>) => {
+    setCurrentPattern(event.target.value);
   };
 
   return (
@@ -30,6 +36,7 @@ const ConfigUI = () => {
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="ink"
             name="radio-buttons-group"
+            onChange={updatePattern}
           >
             <FormControlLabel
               value="ink"

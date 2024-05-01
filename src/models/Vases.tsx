@@ -27,12 +27,31 @@ type ContextType = Record<
 >;
 
 export function Vase(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF("./models/vases.glb") as GLTFResult;
-  const pattern = useTexture("./textures/alcohol.jpg");
+  const { nodes } = useGLTF("./models/vases.glb") as GLTFResult;
+  const patterns = useTexture({
+    ink: "./textures/alcohol.jpg",
+    zebra: "./textures/splatter.jpg",
+  });
   const isRotating = useStore((state) => state.isRotating);
+  const currentPattern = useStore((state) => state.currentPattern);
   const groupRef = useRef<Group>(null);
 
-  useFrame((state, delta) => {
+  const getCurrentPattern = () => {
+    switch (currentPattern) {
+      case "ink":
+        return patterns.ink;
+        break;
+
+      case "zebra":
+        return patterns.zebra;
+        break;
+
+      default:
+        return patterns.ink;
+    }
+  };
+
+  useFrame((_, delta) => {
     if (isRotating) {
       groupRef.current!.rotation.y += delta * SCENE.ROTATION_SPEED;
     }
@@ -45,7 +64,7 @@ export function Vase(props: JSX.IntrinsicElements["group"]) {
         rotation={[Math.PI / 2, 0, -2.356]}
         scale={0.1}
       >
-        <meshStandardMaterial map={pattern} roughness={0} />
+        <meshStandardMaterial map={getCurrentPattern()} roughness={0} />
       </mesh>
     </group>
   );
