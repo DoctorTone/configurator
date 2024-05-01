@@ -13,3 +13,12 @@ body,
 body {
   background: #e7e5c0;
 }
+
+.panel {
+  position: absolute;
+}
+
+#configUI {
+  top: 20%;
+  right: 20%;
+}

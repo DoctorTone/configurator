@@ -10,6 +10,7 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { SCENE } from "../state/Config";
+import useStore from "../state/store";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -28,10 +29,13 @@ type ContextType = Record<
 export function Vase(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("./models/vases.glb") as GLTFResult;
   const pattern = useTexture("./textures/alcohol.jpg");
+  const isRotating = useStore((state) => state.isRotating);
   const groupRef = useRef<Group>(null);
 
   useFrame((state, delta) => {
-    groupRef.current!.rotation.y += delta * SCENE.ROTATION_SPEED;
+    if (isRotating) {
+      groupRef.current!.rotation.y += delta * SCENE.ROTATION_SPEED;
+    }
   });
 
   return (

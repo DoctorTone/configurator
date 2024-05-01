@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Configurator from "./components/Configurator";
 import { SCENE } from "./state/Config";
+import ConfigUI from "./UI/ConfigUI";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           enableDamping={true}
         />
       </Canvas>
+      <ConfigUI />
     </>
   );
 }
