@@ -4,7 +4,7 @@ Command: npx gltfjsx@6.2.16 .\vases.gltf --transform -t
 Files: .\vases.gltf [320.93KB] > C:\Users\tony\Documents\Github\configurator\public\models\vases-transformed.glb [28.35KB] (91%)
 */
 
-import { Mesh, MeshStandardMaterial, Group, Texture } from "three";
+import { Mesh, MeshStandardMaterial, Group, Texture, DoubleSide } from "three";
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
@@ -32,6 +32,7 @@ export function Vase(props: JSX.IntrinsicElements["group"]) {
     zebra: "./textures/splatter.jpg",
     flowers: "./textures/flowers.jpg",
     orange: "./textures/orange.jpg",
+    glass: "./textures/flowers.jpg",
   });
   const isRotating = useStore((state) => state.isRotating);
   const currentPattern = useStore((state) => state.currentPattern);
@@ -54,7 +55,25 @@ export function Vase(props: JSX.IntrinsicElements["group"]) {
         rotation={[Math.PI / 2, 0, -2.356]}
         scale={0.1}
       >
-        <meshStandardMaterial map={getCurrentPattern()} roughness={0} />
+        {currentPattern === "glass" ? (
+          <meshPhysicalMaterial
+            color={0xffffff}
+            transmission={1}
+            opacity={1}
+            metalness={0}
+            ior={1.5}
+            thickness={0.01}
+            roughness={0}
+            specularIntensity={1}
+            specularColor={0xffffff}
+            envMapIntensity={1}
+            lightMapIntensity={1}
+            transparent={true}
+            map={getCurrentPattern()}
+          />
+        ) : (
+          <meshStandardMaterial map={getCurrentPattern()} roughness={0} />
+        )}
       </mesh>
     </group>
   );

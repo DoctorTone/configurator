@@ -26,9 +26,6 @@ const ConfigUI = () => {
 
   return (
     <>
-      <div id="configTitle" className="panel">
-        <Typography variant="h5">DRT Software</Typography>
-      </div>
       <div id="configUI" className="panel">
         <FormGroup>
           <FormControlLabel
@@ -67,6 +64,11 @@ const ConfigUI = () => {
                 value="orange"
                 control={<Radio />}
                 label="Orange"
+              />
+              <FormControlLabel
+                value="glass"
+                control={<Radio />}
+                label="Glass"
               />
             </RadioGroup>
           </FormControl>
