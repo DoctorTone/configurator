@@ -18,9 +18,13 @@ body {
 .title p {
   font-size: 0.875em;
 }
-#configUI {
-  top: 30%;
-  right: 20%;
+#autoRotate {
+  top: 7%;
+  right: 1%;
+}
+#pattern {
+  top: 1%;
+  left: 3%;
 }
 #configTitle {
   bottom: 5%;
