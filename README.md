@@ -5,4 +5,4 @@ It shows an example product (in this case an ornamental vase) that the user can 
 
 This is possible due to the realistic nature of the rendering.
 
-To see the demo -> https://drt-software.com/Demos/Configurator/configurator.html
+Click here to see the online demo -> [Configurator](https://drt-software.com/Demos/Configurator/configurator.html)
