@@ -77,6 +77,36 @@ const ConfigUI = () => {
           </FormControl>
         </FormGroup>
       </div>
+      <div id="table" className="panel">
+        <FormGroup>
+          <FormControl sx={{ mt: 3 }}>
+            <FormLabel
+              sx={{ fontWeight: "bold", fontSize: "h6.fontSize" }}
+              id="demo-radio-buttons-group-label"
+            >
+              Table:
+            </FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue="round"
+              name="radio-buttons-group"
+              onChange={updatePattern}
+            >
+              <FormControlLabel
+                value="round"
+                control={<Radio />}
+                label="Round"
+              />
+              <FormControlLabel
+                value="glass"
+                control={<Radio />}
+                label="Glass"
+              />
+              <FormControlLabel value="wood" control={<Radio />} label="Wood" />
+            </RadioGroup>
+          </FormControl>
+        </FormGroup>
+      </div>
     </>
   );
 };

@@ -26,6 +26,10 @@ body {
   top: 1%;
   left: 3%;
 }
+#table {
+  top: 1%;
+  left: 10%;
+}
 #configTitle {
   bottom: 5%;
   left: 5%;

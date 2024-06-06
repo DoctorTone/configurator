@@ -5,9 +5,6 @@ import { Loading } from "../components/Loading";
 import { Vase } from "../models/Vases";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Table } from "../models/Table";
-import { Backdrop } from "@react-three/drei";
-import { GlassTable } from "../models/GlassTable";
 import { RoundWoodTable } from "../models/RoundWoodTable";
 import { RoundTable } from "../models/RoundTable";
 import { ModernTable } from "../models/ModernTable";
@@ -26,10 +23,15 @@ const Configurator = () => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <Stage adjustCamera={1} intensity={0.5} environment="city">
+      <Stage
+        adjustCamera={1}
+        shadows="contact"
+        intensity={0.5}
+        environment="city"
+      >
         <group ref={groupRef}>
           <Vase scale={0.5} position={[0, 1, 0]} />
-          <RoundTable />
+          <RoundTable position-y={0} />
         </group>
       </Stage>
     </Suspense>
