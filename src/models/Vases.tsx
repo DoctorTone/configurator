@@ -6,10 +6,8 @@ Files: .\vases.gltf [320.93KB] > C:\Users\tony\Documents\Github\configurator\pub
 
 import { Mesh, MeshStandardMaterial, Group, Texture } from "three";
 import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { SCENE } from "../state/Config";
 import useStore from "../state/store";
 
 type GLTFResult = GLTF & {
@@ -34,19 +32,12 @@ export function Vase(props: JSX.IntrinsicElements["group"]) {
     orange: "./textures/orange.jpg",
     glass: "./textures/flowers.jpg",
   });
-  const isRotating = useStore((state) => state.isRotating);
   const currentPattern = useStore((state) => state.currentPattern);
   const groupRef = useRef<Group>(null);
 
   const getCurrentPattern = () => {
     return patterns[currentPattern];
   };
-
-  useFrame((_, delta) => {
-    if (isRotating) {
-      groupRef.current!.rotation.y += delta * SCENE.ROTATION_SPEED;
-    }
-  });
 
   return (
     <group ref={groupRef} {...props} dispose={null}>
