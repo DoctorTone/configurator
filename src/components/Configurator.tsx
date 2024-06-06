@@ -26,7 +26,7 @@ const Configurator = () => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <Stage adjustCamera={0.5} intensity={0.5} environment="city">
+      <Stage adjustCamera={1} intensity={0.5} environment="city">
         <group ref={groupRef}>
           <Vase scale={0.5} position={[0, 1, 0]} />
           <RoundTable />
