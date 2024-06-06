@@ -7,7 +7,6 @@ import {
   RadioGroup,
   Radio,
 } from "@mui/material";
-import Typography from "@mui/material/Typography";
 import useStore from "../state/store";
 import { ChangeEvent } from "react";
 

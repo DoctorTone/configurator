@@ -4,8 +4,8 @@ Command: npx gltfjsx@6.2.16 .\vases.gltf --transform -t
 Files: .\vases.gltf [320.93KB] > C:\Users\tony\Documents\Github\configurator\public\models\vases-transformed.glb [28.35KB] (91%)
 */
 
-import { Mesh, MeshStandardMaterial, Group, Texture, DoubleSide } from "three";
-import React, { useRef } from "react";
+import { Mesh, MeshStandardMaterial, Group, Texture } from "three";
+import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
@@ -80,3 +80,6 @@ export function Vase(props: JSX.IntrinsicElements["group"]) {
 }
 
 useGLTF.preload("./models/vases.glb");
+
+//"Wooden table" (https://skfb.ly/opQYN) by baneon is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+// "Henrik Wool Rug 160x230cm, Mustard and Grey" (https://skfb.ly/6ywBR) by MADE.COM is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/).
