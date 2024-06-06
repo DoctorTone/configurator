@@ -14,6 +14,7 @@ const ConfigUI = () => {
   const setRotating = useStore((state) => state.setRotating);
   const isRotating = useStore((state) => state.isRotating);
   const setCurrentPattern = useStore((state) => state.setCurrentPattern);
+  const setCurrentTable = useStore((state) => state.setCurrentTable);
 
   const toggleRotate = () => {
     setRotating(!isRotating);
@@ -21,6 +22,10 @@ const ConfigUI = () => {
 
   const updatePattern = (event: ChangeEvent<HTMLInputElement>) => {
     setCurrentPattern(event.target.value);
+  };
+
+  const updateTable = (event: ChangeEvent<HTMLInputElement>) => {
+    setCurrentTable(event.target.value);
   };
 
   return (
@@ -90,7 +95,7 @@ const ConfigUI = () => {
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="round"
               name="radio-buttons-group"
-              onChange={updatePattern}
+              onChange={updateTable}
             >
               <FormControlLabel
                 value="round"

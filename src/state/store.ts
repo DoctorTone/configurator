@@ -5,6 +5,8 @@ interface ConfiguratorState {
   setRotating: (status: boolean) => void;
   currentPattern: string;
   setCurrentPattern: (pattern: string) => void;
+  currentTable: string;
+  setCurrentTable: (name: string) => void;
 }
 
 const useStore = create<ConfiguratorState>((set) => ({
@@ -12,6 +14,8 @@ const useStore = create<ConfiguratorState>((set) => ({
   setRotating: (status) => set(() => ({ isRotating: status })),
   currentPattern: "ink",
   setCurrentPattern: (name) => set(() => ({ currentPattern: name })),
+  currentTable: "round",
+  setCurrentTable: (name) => set(() => ({ currentTable: name })),
 }));
 
 export default useStore;
