@@ -7,7 +7,7 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { RoundWoodTable } from "../models/RoundWoodTable";
 import { RoundTable } from "../models/RoundTable";
-import { ModernTable } from "../models/ModernTable";
+import { Stand } from "../models/Stand";
 import { Stage } from "@react-three/drei";
 import useStore from "../state/store";
 
@@ -33,7 +33,9 @@ const Configurator = () => {
         <group ref={groupRef}>
           <Vase scale={0.5} position={[0, 1, 0]} />
           {currentTable === "round" && <RoundTable />}
-          {currentTable === "glass" && <ModernTable position-y={0.275} />}
+          {currentTable === "stand" && (
+            <Stand scale={0.015} position-y={-0.1} />
+          )}
           {currentTable === "wood" && <RoundWoodTable />}
         </group>
       </Stage>

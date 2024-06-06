@@ -21,7 +21,8 @@ const ConfigUI = () => {
   };
 
   const updatePattern = (event: ChangeEvent<HTMLInputElement>) => {
-    setCurrentPattern(event.target.value);
+    const pattern = event.target.value;
+    setCurrentPattern(pattern);
   };
 
   const updateTable = (event: ChangeEvent<HTMLInputElement>) => {
@@ -103,9 +104,9 @@ const ConfigUI = () => {
                 label="Round"
               />
               <FormControlLabel
-                value="glass"
+                value="stand"
                 control={<Radio />}
-                label="Glass"
+                label="Stand"
               />
               <FormControlLabel value="wood" control={<Radio />} label="Wood" />
             </RadioGroup>
