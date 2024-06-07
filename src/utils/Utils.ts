@@ -1,6 +1,5 @@
 const getCameraAdjust = () => {
   const width = document.documentElement.clientWidth;
-  const height = document.documentElement.clientHeight;
 
   const SMALL = 600;
   const MEDIUM = 900;
