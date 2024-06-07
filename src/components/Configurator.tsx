@@ -9,6 +9,7 @@ import { Shelf } from "../models/Shelf";
 import { RoundTable } from "../models/RoundTable";
 import { Stand } from "../models/Stand";
 import { Stage, Shadow } from "@react-three/drei";
+import { getCameraAdjust } from "../utils/Utils";
 import useStore from "../state/store";
 
 const Configurator = () => {
@@ -25,7 +26,7 @@ const Configurator = () => {
   return (
     <Suspense fallback={<Loading />}>
       <Stage
-        adjustCamera={1}
+        adjustCamera={getCameraAdjust()}
         shadows="contact"
         intensity={0.5}
         environment="city"

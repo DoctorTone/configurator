@@ -35,7 +35,7 @@ const ConfigUI = () => {
         <FormGroup>
           <FormControlLabel
             control={<Checkbox checked={isRotating} onChange={toggleRotate} />}
-            label="Auto-rotate"
+            label="Rotate"
           />
         </FormGroup>
       </div>
