@@ -34,3 +34,13 @@ body {
   bottom: 5%;
   left: 5%;
 }
+@media (min-width: 1290px) {
+  #table {
+    top: 1%;
+    left: 12.5%;
+  }
+  #autoRotate {
+    top: 6.5%;
+    left: 20%;
+  }
+}
