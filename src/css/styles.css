@@ -19,8 +19,8 @@ body {
   font-size: 0.875em;
 }
 #autoRotate {
-  top: 7%;
-  right: 1%;
+  top: 1%;
+  left: 35%;
 }
 #pattern {
   top: 1%;
@@ -28,7 +28,7 @@ body {
 }
 #table {
   top: 1%;
-  left: 10%;
+  right: 1%;
 }
 #configTitle {
   bottom: 5%;

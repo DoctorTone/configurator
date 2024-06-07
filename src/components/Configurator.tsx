@@ -8,7 +8,7 @@ import { useFrame } from "@react-three/fiber";
 import { Shelf } from "../models/Shelf";
 import { RoundTable } from "../models/RoundTable";
 import { Stand } from "../models/Stand";
-import { Stage } from "@react-three/drei";
+import { Stage, Shadow } from "@react-three/drei";
 import useStore from "../state/store";
 
 const Configurator = () => {
@@ -32,6 +32,12 @@ const Configurator = () => {
       >
         <group ref={groupRef}>
           <Vase scale={0.5} position={[0, 1, 0]} />
+          <Shadow
+            color="black"
+            scale={0.5}
+            opacity={0.95}
+            position={[0, 1.01, 0]}
+          />
           {currentTable === "round" && <RoundTable />}
           {currentTable === "stand" && (
             <Stand scale={0.015} position-y={-0.1} />
