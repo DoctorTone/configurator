@@ -108,7 +108,11 @@ const ConfigUI = () => {
                 control={<Radio />}
                 label="Stand"
               />
-              <FormControlLabel value="wood" control={<Radio />} label="Wood" />
+              <FormControlLabel
+                value="shelf"
+                control={<Radio />}
+                label="Shelf"
+              />
             </RadioGroup>
           </FormControl>
         </FormGroup>

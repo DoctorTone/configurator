@@ -5,7 +5,7 @@ import { Loading } from "../components/Loading";
 import { Vase } from "../models/Vases";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { RoundWoodTable } from "../models/RoundWoodTable";
+import { Shelf } from "../models/Shelf";
 import { RoundTable } from "../models/RoundTable";
 import { Stand } from "../models/Stand";
 import { Stage } from "@react-three/drei";
@@ -36,7 +36,9 @@ const Configurator = () => {
           {currentTable === "stand" && (
             <Stand scale={0.015} position-y={-0.1} />
           )}
-          {currentTable === "wood" && <RoundWoodTable />}
+          {currentTable === "shelf" && (
+            <Shelf scale-z={1.2} position-y={0.575} />
+          )}
         </group>
       </Stage>
     </Suspense>
