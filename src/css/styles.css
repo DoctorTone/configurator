@@ -34,6 +34,10 @@ body {
   bottom: 5%;
   left: 5%;
 }
+#lights {
+  top: 3.5%;
+  left: 20%;
+}
 @media (min-width: 1290px) {
   #table {
     top: 1%;
@@ -41,6 +45,6 @@ body {
   }
   #autoRotate {
     top: 6.5%;
-    left: 20%;
+    left: 28%;
   }
 }

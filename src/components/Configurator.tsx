@@ -1,13 +1,13 @@
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 import { Group } from "three";
 import { SCENE } from "../state/Config";
 import { Loading } from "../components/Loading";
 import { Vase } from "../models/Vases";
-import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Shelf } from "../models/Shelf";
 import { RoundTable } from "../models/RoundTable";
 import { Stand } from "../models/Stand";
+import { useThree } from "@react-three/fiber";
 import { Stage, Shadow } from "@react-three/drei";
 import { getCameraAdjust } from "../utils/Utils";
 import useStore from "../state/store";
@@ -16,10 +16,16 @@ const Configurator = () => {
   const isRotating = useStore((state) => state.isRotating);
   const currentTable = useStore((state) => state.currentTable);
   const groupRef = useRef<Group>(null);
+  const { scene } = useThree();
 
   useFrame((_, delta) => {
     if (isRotating) {
       groupRef.current!.rotation.y += delta * SCENE.ROTATION_SPEED;
+    }
+    if (scene.children.length) {
+      scene.children.forEach((child) => {
+        console.log("Child = ", child);
+      });
     }
   });
 

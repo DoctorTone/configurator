@@ -7,6 +7,7 @@ import {
   RadioGroup,
   Radio,
 } from "@mui/material";
+import Switch from "@mui/material/Switch";
 import useStore from "../state/store";
 import { ChangeEvent } from "react";
 
@@ -115,6 +116,26 @@ const ConfigUI = () => {
               />
             </RadioGroup>
           </FormControl>
+        </FormGroup>
+      </div>
+      <div id="lights" className="panel">
+        <FormGroup>
+          <FormLabel
+            sx={{ fontWeight: "bold", fontSize: "h6.fontSize" }}
+            id="demo-radio-buttons-group-label"
+          >
+            Lights:
+          </FormLabel>
+          <FormControlLabel
+            control={
+              <Switch
+                // checked={showPaths}
+                // onChange={togglePaths}
+                color="primary"
+              />
+            }
+            label="Day/night"
+          />
         </FormGroup>
       </div>
     </>
