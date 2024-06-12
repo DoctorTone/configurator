@@ -48,6 +48,16 @@ body {
     right: 1%;
   }
 }
+@media (min-width: 768px) and (orientation: portrait) {
+  #lights {
+    top: 3.65%;
+    left: 20%;
+  }
+  #autoRotate {
+    top: 25%;
+    right: 1%;
+  }
+}
 @media (min-width: 1290px) {
   #table {
     top: 1%;
