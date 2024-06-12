@@ -26,8 +26,34 @@ const Configurator = () => {
   });
 
   useEffect(() => {
-    // DEBUG
-    console.log("Day mode = ", dayMode);
+    if (scene.children.length) {
+      scene.children.forEach((child) => {
+        switch (child.type) {
+          case "PointLight":
+            child.visible = dayMode ? true : false;
+            scene.environmentIntensity = dayMode
+              ? SCENE.DAY_ENV_INTENSITY
+              : SCENE.NIGHT_ENV_INTENSITY;
+            break;
+
+          case "AmbientLight":
+            child.visible = dayMode ? true : false;
+            break;
+
+          case "SpotLight":
+            child.intensity = dayMode
+              ? SCENE.DAY_SPOT_INTENSITY
+              : SCENE.NIGHT_SPOT_INTENSITY;
+            child.angle = dayMode
+              ? SCENE.DAY_SPOT_ANGLE
+              : SCENE.NIGHT_SPOT_ANGLE;
+            break;
+
+          default:
+            break;
+        }
+      });
+    }
   }, [dayMode]);
 
   return (
