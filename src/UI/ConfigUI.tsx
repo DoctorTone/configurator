@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import {
   FormGroup,
@@ -12,13 +13,20 @@ import useStore from "../state/store";
 import { ChangeEvent } from "react";
 
 const ConfigUI = () => {
+  const dayRef = useRef(true);
   const setRotating = useStore((state) => state.setRotating);
   const isRotating = useStore((state) => state.isRotating);
   const setCurrentPattern = useStore((state) => state.setCurrentPattern);
   const setCurrentTable = useStore((state) => state.setCurrentTable);
+  const switchDayMode = useStore((state) => state.switchDayMode);
 
   const toggleRotate = () => {
     setRotating(!isRotating);
+  };
+
+  const toggleLights = () => {
+    dayRef.current = !dayRef.current;
+    switchDayMode(dayRef.current);
   };
 
   const updatePattern = (event: ChangeEvent<HTMLInputElement>) => {
@@ -130,7 +138,7 @@ const ConfigUI = () => {
             control={
               <Switch
                 // checked={showPaths}
-                // onChange={togglePaths}
+                onChange={toggleLights}
                 color="primary"
               />
             }

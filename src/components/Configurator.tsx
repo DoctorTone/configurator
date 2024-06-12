@@ -1,4 +1,4 @@
-import { Suspense, useRef } from "react";
+import { Suspense, useRef, useEffect } from "react";
 import { Group } from "three";
 import { SCENE } from "../state/Config";
 import { Loading } from "../components/Loading";
@@ -15,6 +15,7 @@ import useStore from "../state/store";
 const Configurator = () => {
   const isRotating = useStore((state) => state.isRotating);
   const currentTable = useStore((state) => state.currentTable);
+  const dayMode = useStore((state) => state.dayMode);
   const groupRef = useRef<Group>(null);
   const { scene } = useThree();
 
@@ -22,12 +23,12 @@ const Configurator = () => {
     if (isRotating) {
       groupRef.current!.rotation.y += delta * SCENE.ROTATION_SPEED;
     }
-    if (scene.children.length) {
-      scene.children.forEach((child) => {
-        console.log("Child = ", child);
-      });
-    }
   });
+
+  useEffect(() => {
+    // DEBUG
+    console.log("Day mode = ", dayMode);
+  }, [dayMode]);
 
   return (
     <Suspense fallback={<Loading />}>
