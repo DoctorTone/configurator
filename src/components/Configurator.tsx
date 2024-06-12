@@ -1,5 +1,5 @@
 import { Suspense, useRef, useEffect } from "react";
-import { Group } from "three";
+import { Group, SpotLight } from "three";
 import { SCENE } from "../state/Config";
 import { Loading } from "../components/Loading";
 import { Vase } from "../models/Vases";
@@ -40,14 +40,16 @@ const Configurator = () => {
             child.visible = dayMode ? true : false;
             break;
 
-          case "SpotLight":
-            child.intensity = dayMode
+          case "SpotLight": {
+            const spotlight = child as SpotLight;
+            spotlight.intensity = dayMode
               ? SCENE.DAY_SPOT_INTENSITY
               : SCENE.NIGHT_SPOT_INTENSITY;
-            child.angle = dayMode
+            spotlight.angle = dayMode
               ? SCENE.DAY_SPOT_ANGLE
               : SCENE.NIGHT_SPOT_ANGLE;
             break;
+          }
 
           default:
             break;
