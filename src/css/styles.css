@@ -38,6 +38,16 @@ body {
   bottom: 5%;
   left: 5%;
 }
+@media (min-width: 768px) {
+  #lights {
+    top: 9%;
+    left: 20%;
+  }
+  #autoRotate {
+    top: 65%;
+    right: 1%;
+  }
+}
 @media (min-width: 1290px) {
   #table {
     top: 1%;
