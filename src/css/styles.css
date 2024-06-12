@@ -40,21 +40,31 @@ body {
 }
 @media (min-width: 768px) {
   #lights {
-    top: 9%;
-    left: 20%;
-  }
-  #autoRotate {
-    top: 65%;
-    right: 1%;
-  }
-}
-@media (min-width: 768px) and (orientation: portrait) {
-  #lights {
-    top: 3.65%;
-    left: 20%;
+    top: 30%;
+    left: 3%;
   }
   #autoRotate {
     top: 25%;
+    right: 1%;
+  }
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  #lights {
+    top: 9.5%;
+    left: 20%;
+  }
+  #autoRotate {
+    top: 70%;
+    right: 1%;
+  }
+}
+@media (min-width: 992px) {
+  #lights {
+    top: 45%;
+    left: 3%;
+  }
+  #autoRotate {
+    top: 30%;
     right: 1%;
   }
 }
@@ -64,7 +74,11 @@ body {
     left: 12.5%;
   }
   #autoRotate {
-    top: 6.5%;
-    left: 28%;
+    top: 53%;
+    left: 3%;
+  }
+  #lights {
+    top: 42%;
+    left: 3%;
   }
 }
