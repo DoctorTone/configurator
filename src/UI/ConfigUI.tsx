@@ -68,9 +68,12 @@ const ConfigUI = () => {
           onChange={handleAlignment}
           aria-label="text alignment"
         >
-          <ToggleButton sx={{ mb: 2 }} value="ink" aria-label="ink blot">
-            Ink blot
-          </ToggleButton>
+          <ToggleButton
+            sx={{ width: "50px", height: "50px", mb: 2, borderRadius: "50%" }}
+            style={{ backgroundImage: `url(./textures/alcohol.jpg)` }}
+            value="ink"
+            aria-label="ink blot"
+          ></ToggleButton>
           <ToggleButton sx={{ mb: 2 }} value="zebra" aria-label="zebra">
             Zebra
           </ToggleButton>
