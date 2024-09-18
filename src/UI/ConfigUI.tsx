@@ -69,23 +69,40 @@ const ConfigUI = () => {
           aria-label="text alignment"
         >
           <ToggleButton
-            sx={{ width: "50px", height: "50px", mb: 2, borderRadius: "50%" }}
-            style={{ backgroundImage: `url(./textures/alcohol.jpg)` }}
+            className="roundedButton"
+            sx={{ mb: 1 }}
+            style={{ backgroundImage: `url(./textures/blot.jpg)` }}
             value="ink"
             aria-label="ink blot"
           ></ToggleButton>
-          <ToggleButton sx={{ mb: 2 }} value="zebra" aria-label="zebra">
-            Zebra
-          </ToggleButton>
-          <ToggleButton sx={{ mb: 2 }} value="flowers" aria-label="flowers">
-            Flowers
-          </ToggleButton>
-          <ToggleButton sx={{ mb: 2 }} value="orange" aria-label="orange">
-            Orange
-          </ToggleButton>
-          <ToggleButton sx={{ mb: 2 }} value="glass" aria-label="glass">
-            Glass
-          </ToggleButton>
+          <ToggleButton
+            className="roundedButton"
+            sx={{ mb: 1 }}
+            style={{ backgroundImage: `url(./textures/zebra.jpg)` }}
+            value="zebra"
+            aria-label="zebra"
+          ></ToggleButton>
+          <ToggleButton
+            className="roundedButton"
+            sx={{ mb: 1 }}
+            style={{ backgroundImage: `url(./textures/flowersIcon.jpg)` }}
+            value="flowers"
+            aria-label="flowers"
+          ></ToggleButton>
+          <ToggleButton
+            className="roundedButton"
+            sx={{ mb: 1 }}
+            style={{ backgroundImage: `url(./textures/orangeIcon.jpg)` }}
+            value="orange"
+            aria-label="orange"
+          ></ToggleButton>
+          <ToggleButton
+            className="roundedButton"
+            sx={{ mb: 1 }}
+            style={{ backgroundImage: `url(./textures/glass.png)` }}
+            value="glass"
+            aria-label="glass"
+          ></ToggleButton>
         </ToggleButtonGroup>
       </div>
       <div id="table" className="panel">
