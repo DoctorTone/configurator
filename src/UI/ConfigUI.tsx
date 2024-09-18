@@ -61,6 +61,7 @@ const ConfigUI = () => {
       </div>
 
       <div id="pattern" className="panel">
+        <h3>Pattern</h3>
         <ToggleButtonGroup
           orientation="vertical"
           value={alignment}
