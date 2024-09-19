@@ -7,6 +7,7 @@ import {
   FormLabel,
   RadioGroup,
   Radio,
+  Typography,
 } from "@mui/material";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
@@ -63,13 +64,18 @@ const ConfigUI = () => {
       </div>
 
       <div id="pattern" className="panel">
-        <h3>Pattern</h3>
+        <div style={{ marginBottom: "20px" }}>
+          <FormLabel sx={{ fontWeight: "bold", fontSize: "h5.fontSize" }}>
+            Vase Configurator
+          </FormLabel>
+        </div>
         <ToggleButtonGroup
+          sx={{ ml: 1 }}
           orientation="vertical"
           value={alignment}
           exclusive
           onChange={updatePattern}
-          aria-label="text alignment"
+          aria-label="pattern change"
         >
           <ToggleButton
             className="roundedButton"

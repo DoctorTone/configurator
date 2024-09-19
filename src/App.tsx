@@ -3,6 +3,10 @@ import { OrbitControls } from "@react-three/drei";
 import Configurator from "./components/Configurator";
 import { SCENE } from "./state/Config";
 import ConfigUI from "./UI/ConfigUI";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 function App() {
   return (
