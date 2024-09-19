@@ -23,17 +23,30 @@ body {
   width: 50px;
   height: 50px;
 }
+.buttonGroup {
+  width: 100%;
+}
+.buttonText {
+  display: inline-block;
+  width: 50%;
+}
 #autoRotate {
   top: 25%;
   right: 1%;
 }
 #pattern {
-  top: 1%;
+  top: 7%;
   left: 3%;
+  width: 9%;
+}
+#title {
+  top: 1%;
+  left: 1%;
 }
 #table {
   top: 1%;
   right: 1%;
+  width: 6%;
 }
 #lights {
   top: 4.25%;
@@ -75,8 +88,8 @@ body {
 }
 @media (min-width: 1290px) {
   #table {
-    top: 1%;
-    left: 12.5%;
+    top: 7%;
+    left: 15%;
   }
   #autoRotate {
     top: 53%;

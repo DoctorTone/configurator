@@ -20,8 +20,8 @@ const Configurator = () => {
   const { scene } = useThree();
 
   useFrame((_, delta) => {
-    if (isRotating) {
-      groupRef.current!.rotation.y += delta * SCENE.ROTATION_SPEED;
+    if (isRotating && groupRef.current) {
+      groupRef.current.rotation.y += delta * SCENE.ROTATION_SPEED;
     }
   });
 

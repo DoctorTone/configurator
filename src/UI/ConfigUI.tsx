@@ -23,14 +23,6 @@ const ConfigUI = () => {
   const setCurrentPattern = useStore((state) => state.setCurrentPattern);
   const setCurrentTable = useStore((state) => state.setCurrentTable);
   const switchDayMode = useStore((state) => state.switchDayMode);
-  const [alignment, setAlignment] = useState<string | null>("left");
-
-  const handleAlignment = (
-    event: MouseEvent<HTMLElement>,
-    newAlignment: string | null
-  ) => {
-    setAlignment(newAlignment);
-  };
 
   const toggleRotate = () => {
     setRotating(!isRotating);
@@ -48,8 +40,9 @@ const ConfigUI = () => {
     setCurrentPattern(newPattern);
   };
 
-  const updateTable = (event: ChangeEvent<HTMLInputElement>) => {
-    setCurrentTable(event.target.value);
+  const updateTable = (event: MouseEvent<HTMLElement>, newTable: string) => {
+    console.log("Table = ", newTable);
+    setCurrentTable(newTable);
   };
 
   return (
@@ -63,90 +56,114 @@ const ConfigUI = () => {
         </FormGroup>
       </div>
 
+      <div id="title" className="panel">
+        <FormLabel sx={{ fontWeight: "bold", fontSize: "h5.fontSize" }}>
+          Vase Configurator
+        </FormLabel>
+      </div>
+
       <div id="pattern" className="panel">
-        <div style={{ marginBottom: "20px" }}>
-          <FormLabel sx={{ fontWeight: "bold", fontSize: "h5.fontSize" }}>
-            Vase Configurator
-          </FormLabel>
-        </div>
         <ToggleButtonGroup
-          sx={{ ml: 1 }}
           orientation="vertical"
-          value={alignment}
           exclusive
           onChange={updatePattern}
           aria-label="pattern change"
+          id="patternChange"
+          className="buttonGroup"
         >
-          <ToggleButton
-            className="roundedButton"
-            sx={{ mb: 1 }}
-            style={{ backgroundImage: `url(./textures/blot.jpg)` }}
-            value="ink"
-            aria-label="ink blot"
-          ></ToggleButton>
-          <ToggleButton
-            className="roundedButton"
-            sx={{ mb: 1 }}
-            style={{ backgroundImage: `url(./textures/zebra.jpg)` }}
-            value="zebra"
-            aria-label="zebra"
-          ></ToggleButton>
-          <ToggleButton
-            className="roundedButton"
-            sx={{ mb: 1 }}
-            style={{ backgroundImage: `url(./textures/flowersIcon.jpg)` }}
-            value="flowers"
-            aria-label="flowers"
-          ></ToggleButton>
-          <ToggleButton
-            className="roundedButton"
-            sx={{ mb: 1 }}
-            style={{ backgroundImage: `url(./textures/orangeIcon.jpg)` }}
-            value="orange"
-            aria-label="orange"
-          ></ToggleButton>
-          <ToggleButton
-            className="roundedButton"
-            sx={{ mb: 1 }}
-            style={{ backgroundImage: `url(./textures/glass.png)` }}
-            value="glass"
-            aria-label="glass"
-          ></ToggleButton>
+          <div>
+            <FormLabel className="buttonText">Ink blot</FormLabel>
+            <ToggleButton
+              className="roundedButton"
+              sx={{ mb: 1 }}
+              style={{ backgroundImage: `url(./textures/blot.jpg)` }}
+              value="ink"
+              aria-label="ink blot"
+            ></ToggleButton>
+          </div>
+          <div>
+            <FormLabel className="buttonText">Zebra</FormLabel>
+            <ToggleButton
+              className="roundedButton"
+              sx={{ mb: 1 }}
+              style={{ backgroundImage: `url(./textures/zebra.jpg)` }}
+              value="zebra"
+              aria-label="zebra"
+            ></ToggleButton>
+          </div>
+          <div>
+            <FormLabel className="buttonText">Flower</FormLabel>
+            <ToggleButton
+              className="roundedButton"
+              sx={{ mb: 1 }}
+              style={{ backgroundImage: `url(./textures/flowersIcon.jpg)` }}
+              value="flowers"
+              aria-label="flowers"
+            ></ToggleButton>
+          </div>
+          <div>
+            <FormLabel className="buttonText">Orange</FormLabel>
+            <ToggleButton
+              className="roundedButton"
+              sx={{ mb: 1 }}
+              style={{ backgroundImage: `url(./textures/orangeIcon.jpg)` }}
+              value="orange"
+              aria-label="orange"
+            ></ToggleButton>
+          </div>
+          <div>
+            <FormLabel className="buttonText">Glass</FormLabel>
+            <ToggleButton
+              className="roundedButton"
+              sx={{ mb: 1 }}
+              style={{ backgroundImage: `url(./textures/glass.png)` }}
+              value="glass"
+              aria-label="glass"
+            ></ToggleButton>
+          </div>
         </ToggleButtonGroup>
       </div>
       <div id="table" className="panel">
-        <FormGroup>
-          <FormControl sx={{ mt: 3 }}>
-            <FormLabel
-              sx={{ fontWeight: "bold", fontSize: "h6.fontSize" }}
-              id="demo-radio-buttons-group-label"
-            >
-              Table:
-            </FormLabel>
-            <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="round"
-              name="radio-buttons-group"
-              onChange={updateTable}
-            >
-              <FormControlLabel
-                value="round"
-                control={<Radio />}
-                label="Round"
-              />
-              <FormControlLabel
-                value="stand"
-                control={<Radio />}
-                label="Stand"
-              />
-              <FormControlLabel
-                value="shelf"
-                control={<Radio />}
-                label="Shelf"
-              />
-            </RadioGroup>
-          </FormControl>
-        </FormGroup>
+        <ToggleButtonGroup
+          sx={{ ml: 1 }}
+          orientation="vertical"
+          exclusive
+          onChange={updateTable}
+          aria-label="table change"
+          id="tableChange"
+          className="buttonGroup"
+        >
+          <div>
+            <FormLabel className="buttonText">Round</FormLabel>
+            <ToggleButton
+              className="roundedButton"
+              sx={{ mb: 1 }}
+              style={{ backgroundImage: `url(./textures/round.png)` }}
+              value="round"
+              aria-label="round table"
+            ></ToggleButton>
+          </div>
+          <div>
+            <FormLabel className="buttonText">Stand</FormLabel>
+            <ToggleButton
+              className="roundedButton"
+              sx={{ mb: 1 }}
+              style={{ backgroundImage: `url(./textures/stand.png)` }}
+              value="stand"
+              aria-label="stand"
+            ></ToggleButton>
+          </div>
+          <div>
+            <FormLabel className="buttonText">Shelf</FormLabel>
+            <ToggleButton
+              className="roundedButton"
+              sx={{ mb: 1 }}
+              style={{ backgroundImage: `url(./textures/shelf.png)` }}
+              value="shelf"
+              aria-label="shelf"
+            ></ToggleButton>
+          </div>
+        </ToggleButtonGroup>
       </div>
       <div id="lights" className="panel">
         <FormGroup>
