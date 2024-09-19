@@ -40,9 +40,11 @@ const ConfigUI = () => {
     switchDayMode(dayRef.current);
   };
 
-  const updatePattern = (event: ChangeEvent<HTMLInputElement>) => {
-    const pattern = event.target.value;
-    setCurrentPattern(pattern);
+  const updatePattern = (
+    event: MouseEvent<HTMLElement>,
+    newPattern: string
+  ) => {
+    setCurrentPattern(newPattern);
   };
 
   const updateTable = (event: ChangeEvent<HTMLInputElement>) => {
@@ -66,7 +68,7 @@ const ConfigUI = () => {
           orientation="vertical"
           value={alignment}
           exclusive
-          onChange={handleAlignment}
+          onChange={updatePattern}
           aria-label="text alignment"
         >
           <ToggleButton
