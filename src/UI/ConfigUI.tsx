@@ -1,11 +1,17 @@
 import { useRef, useState, MouseEvent } from "react";
 import Checkbox from "@mui/material/Checkbox";
-import { FormGroup, FormControlLabel, FormLabel } from "@mui/material";
+import {
+  FormGroup,
+  FormControlLabel,
+  FormLabel,
+  Typography,
+} from "@mui/material";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Switch from "@mui/material/Switch";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import CopyrightIcon from "@mui/icons-material/Copyright";
 import Stack from "@mui/material/Stack";
 import useStore from "../state/store";
 
@@ -40,6 +46,11 @@ const ConfigUI = () => {
 
   return (
     <>
+      <div id="copyright" className="panel">
+        <Stack direction="row">
+          <CopyrightIcon /> <Typography>DRT Software Ltd. 2024</Typography>
+        </Stack>
+      </div>
       <div id="autoRotate" className="panel">
         <FormLabel sx={{ fontWeight: "bold", fontSize: "h6.fontSize" }}>
           Auto-rotate

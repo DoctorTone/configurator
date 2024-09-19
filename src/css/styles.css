@@ -34,6 +34,10 @@ body {
   top: 25%;
   right: 1%;
 }
+#copyright {
+  bottom: 2%;
+  left: 2%;
+}
 #pattern {
   top: 7%;
   left: 3%;
