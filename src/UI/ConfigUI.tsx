@@ -12,6 +12,7 @@ import useStore from "../state/store";
 const ConfigUI = () => {
   const dayRef = useRef(true);
   const [activePattern, setActivePattern] = useState("ink");
+  const [activeTable, setActiveTable] = useState("round");
   const setRotating = useStore((state) => state.setRotating);
   const isRotating = useStore((state) => state.isRotating);
   const setCurrentPattern = useStore((state) => state.setCurrentPattern);
@@ -34,6 +35,7 @@ const ConfigUI = () => {
 
   const updateTable = (_: MouseEvent<HTMLElement>, newTable: string) => {
     setCurrentTable(newTable);
+    setActiveTable(newTable);
   };
 
   return (
@@ -169,10 +171,18 @@ const ConfigUI = () => {
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
-              style={{
-                backgroundImage: `url(./textures/round.png)`,
-                backgroundPosition: "center",
-              }}
+              style={
+                activeTable === "round"
+                  ? {
+                      backgroundImage: `url(./textures/round.png)`,
+                      backgroundPosition: "center",
+                      border: "2px solid blue",
+                    }
+                  : {
+                      backgroundImage: `url(./textures/round.png)`,
+                      backgroundPosition: "center",
+                    }
+              }
               value="round"
               aria-label="round table"
             ></ToggleButton>
@@ -182,10 +192,18 @@ const ConfigUI = () => {
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
-              style={{
-                backgroundImage: `url(./textures/stand.png)`,
-                backgroundPosition: "center",
-              }}
+              style={
+                activeTable === "stand"
+                  ? {
+                      backgroundImage: `url(./textures/stand.png)`,
+                      backgroundPosition: "center",
+                      border: "2px solid blue",
+                    }
+                  : {
+                      backgroundImage: `url(./textures/stand.png)`,
+                      backgroundPosition: "center",
+                    }
+              }
               value="stand"
               aria-label="stand"
             ></ToggleButton>
@@ -195,7 +213,18 @@ const ConfigUI = () => {
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
-              style={{ backgroundImage: `url(./textures/shelf.png)` }}
+              style={
+                activeTable === "shelf"
+                  ? {
+                      backgroundImage: `url(./textures/shelf.png)`,
+                      backgroundPosition: "center",
+                      border: "2px solid blue",
+                    }
+                  : {
+                      backgroundImage: `url(./textures/shelf.png)`,
+                      backgroundPosition: "center",
+                    }
+              }
               value="shelf"
               aria-label="shelf"
             ></ToggleButton>
