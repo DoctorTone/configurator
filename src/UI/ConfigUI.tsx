@@ -1,4 +1,4 @@
-import { useRef, MouseEvent } from "react";
+import { useRef, useState, MouseEvent } from "react";
 import { FormLabel, Typography } from "@mui/material";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
@@ -11,6 +11,7 @@ import useStore from "../state/store";
 
 const ConfigUI = () => {
   const dayRef = useRef(true);
+  const [activePattern, setActivePattern] = useState("ink");
   const setRotating = useStore((state) => state.setRotating);
   const isRotating = useStore((state) => state.isRotating);
   const setCurrentPattern = useStore((state) => state.setCurrentPattern);
@@ -28,6 +29,7 @@ const ConfigUI = () => {
 
   const updatePattern = (_: MouseEvent<HTMLElement>, newPattern: string) => {
     setCurrentPattern(newPattern);
+    setActivePattern(newPattern);
   };
 
   const updateTable = (_: MouseEvent<HTMLElement>, newTable: string) => {
@@ -70,7 +72,14 @@ const ConfigUI = () => {
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
-              style={{ backgroundImage: `url(./textures/blot.jpg)` }}
+              style={
+                activePattern === "ink"
+                  ? {
+                      backgroundImage: `url(./textures/blot.jpg)`,
+                      border: "2px solid darkblue",
+                    }
+                  : { backgroundImage: `url(./textures/blot.jpg)` }
+              }
               value="ink"
               aria-label="ink blot"
             ></ToggleButton>
@@ -80,7 +89,14 @@ const ConfigUI = () => {
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
-              style={{ backgroundImage: `url(./textures/zebra.jpg)` }}
+              style={
+                activePattern === "zebra"
+                  ? {
+                      backgroundImage: `url(./textures/zebra.jpg)`,
+                      border: "2px solid darkblue",
+                    }
+                  : { backgroundImage: `url(./textures/zebra.jpg)` }
+              }
               value="zebra"
               aria-label="zebra"
             ></ToggleButton>
@@ -90,7 +106,14 @@ const ConfigUI = () => {
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
-              style={{ backgroundImage: `url(./textures/flowersIcon.jpg)` }}
+              style={
+                activePattern === "flowers"
+                  ? {
+                      backgroundImage: `url(./textures/flowersIcon.jpg)`,
+                      border: "2px solid darkblue",
+                    }
+                  : { backgroundImage: `url(./textures/flowersIcon.jpg)` }
+              }
               value="flowers"
               aria-label="flowers"
             ></ToggleButton>
@@ -100,7 +123,14 @@ const ConfigUI = () => {
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
-              style={{ backgroundImage: `url(./textures/orangeIcon.jpg)` }}
+              style={
+                activePattern === "orange"
+                  ? {
+                      backgroundImage: `url(./textures/orangeIcon.jpg)`,
+                      border: "2px solid darkblue",
+                    }
+                  : { backgroundImage: `url(./textures/orangeIcon.jpg)` }
+              }
               value="orange"
               aria-label="orange"
             ></ToggleButton>
@@ -110,7 +140,14 @@ const ConfigUI = () => {
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
-              style={{ backgroundImage: `url(./textures/glass.png)` }}
+              style={
+                activePattern === "glass"
+                  ? {
+                      backgroundImage: `url(./textures/glass.png)`,
+                      border: "2px solid darkblue",
+                    }
+                  : { backgroundImage: `url(./textures/glass.png)` }
+              }
               value="glass"
               aria-label="glass"
             ></ToggleButton>
