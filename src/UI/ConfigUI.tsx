@@ -1,20 +1,13 @@
 import { useRef, useState, MouseEvent } from "react";
 import Checkbox from "@mui/material/Checkbox";
-import {
-  FormGroup,
-  FormControlLabel,
-  FormControl,
-  FormLabel,
-  RadioGroup,
-  Radio,
-  Typography,
-} from "@mui/material";
+import { FormGroup, FormControlLabel, FormLabel } from "@mui/material";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Switch from "@mui/material/Switch";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import Stack from "@mui/material/Stack";
 import useStore from "../state/store";
-
-import { ChangeEvent } from "react";
 
 const ConfigUI = () => {
   const dayRef = useRef(true);
@@ -138,7 +131,10 @@ const ConfigUI = () => {
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
-              style={{ backgroundImage: `url(./textures/round.png)` }}
+              style={{
+                backgroundImage: `url(./textures/round.png)`,
+                backgroundPosition: "center",
+              }}
               value="round"
               aria-label="round table"
             ></ToggleButton>
@@ -148,7 +144,10 @@ const ConfigUI = () => {
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
-              style={{ backgroundImage: `url(./textures/stand.png)` }}
+              style={{
+                backgroundImage: `url(./textures/stand.png)`,
+                backgroundPosition: "center",
+              }}
               value="stand"
               aria-label="stand"
             ></ToggleButton>
@@ -166,24 +165,17 @@ const ConfigUI = () => {
         </ToggleButtonGroup>
       </div>
       <div id="lights" className="panel">
-        <FormGroup>
-          <FormLabel
-            sx={{ fontWeight: "bold", fontSize: "h6.fontSize" }}
-            id="demo-radio-buttons-group-label"
-          >
-            Lights:
-          </FormLabel>
-          <FormControlLabel
-            control={
-              <Switch
-                // checked={showPaths}
-                onChange={toggleLights}
-                color="primary"
-              />
-            }
-            label="Day/night"
-          />
-        </FormGroup>
+        <FormLabel
+          sx={{ ml: 1, fontWeight: "bold", fontSize: "h6.fontSize" }}
+          id="demo-radio-buttons-group-label"
+        >
+          Lighting
+        </FormLabel>
+        <Stack direction="row" sx={{ display: "flex", alignItems: "center" }}>
+          <LightModeIcon color="action" />
+          <Switch onChange={toggleLights} color="primary" />
+          <DarkModeIcon />
+        </Stack>
       </div>
     </>
   );

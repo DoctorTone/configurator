@@ -20,8 +20,8 @@ body {
 }
 .roundedButton {
   border-radius: 50% !important;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 }
 .buttonGroup {
   width: 100%;
@@ -51,6 +51,7 @@ body {
 #lights {
   top: 4.25%;
   left: 36%;
+  width: 10%;
 }
 #configTitle {
   bottom: 5%;
@@ -89,7 +90,7 @@ body {
 @media (min-width: 1290px) {
   #table {
     top: 7%;
-    left: 15%;
+    left: 12.5%;
   }
   #autoRotate {
     top: 53%;
