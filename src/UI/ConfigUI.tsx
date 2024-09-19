@@ -1,11 +1,5 @@
-import { useRef, useState, MouseEvent } from "react";
-import Checkbox from "@mui/material/Checkbox";
-import {
-  FormGroup,
-  FormControlLabel,
-  FormLabel,
-  Typography,
-} from "@mui/material";
+import { useRef, MouseEvent } from "react";
+import { FormLabel, Typography } from "@mui/material";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Switch from "@mui/material/Switch";
@@ -32,15 +26,11 @@ const ConfigUI = () => {
     switchDayMode(dayRef.current);
   };
 
-  const updatePattern = (
-    event: MouseEvent<HTMLElement>,
-    newPattern: string
-  ) => {
+  const updatePattern = (_: MouseEvent<HTMLElement>, newPattern: string) => {
     setCurrentPattern(newPattern);
   };
 
-  const updateTable = (event: MouseEvent<HTMLElement>, newTable: string) => {
-    console.log("Table = ", newTable);
+  const updateTable = (_: MouseEvent<HTMLElement>, newTable: string) => {
     setCurrentTable(newTable);
   };
 
