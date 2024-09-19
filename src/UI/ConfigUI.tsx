@@ -41,12 +41,12 @@ const ConfigUI = () => {
   return (
     <>
       <div id="autoRotate" className="panel">
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox checked={isRotating} onChange={toggleRotate} />}
-            label="Rotate"
-          />
-        </FormGroup>
+        <FormLabel sx={{ fontWeight: "bold", fontSize: "h6.fontSize" }}>
+          AutoRotate
+        </FormLabel>
+        <div>
+          <Switch sx={{ ml: 2 }} onChange={toggleRotate} color="primary" />
+        </div>
       </div>
 
       <div id="title" className="panel">
