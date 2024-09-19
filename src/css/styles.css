@@ -31,8 +31,8 @@ body {
   width: 50%;
 }
 #autoRotate {
-  top: 25%;
-  right: 1%;
+  bottom: 7.5%;
+  right: 3%;
 }
 #copyright {
   bottom: 2%;
@@ -41,67 +41,130 @@ body {
 #pattern {
   top: 7%;
   left: 3%;
-  width: 9%;
+  width: 33%;
 }
 #title {
   top: 1%;
   left: 1%;
 }
 #table {
-  top: 1%;
-  right: 1%;
-  width: 6%;
+  top: 7%;
+  right: 5%;
+  width: 30%;
 }
 #lights {
-  top: 4.25%;
-  left: 36%;
+  bottom: 7.5%;
+  left: 3%;
   width: 10%;
 }
 #configTitle {
   bottom: 5%;
   left: 5%;
 }
-@media (min-width: 768px) {
+@media (min-width: 650px) {
   #lights {
-    top: 30%;
+    bottom: 40%;
     left: 3%;
   }
   #autoRotate {
-    top: 25%;
+    bottom: 55%;
     right: 1%;
+  }
+}
+@media (min-width: 650px) and (orientation: landscape) {
+  #pattern {
+    left: 67.5%;
+    width: 17.5%;
+  }
+  #table {
+    right: 1%;
+    width: 15%;
+  }
+  #lights {
+    bottom: 50%;
+    left: 3%;
+  }
+  #autoRotate {
+    bottom: 25%;
+    right: 83%;
+  }
+}
+@media (min-width: 768px) {
+  #pattern {
+    width: 20%;
+  }
+  #table {
+    width: 15%;
+  }
+  #lights {
+    bottom: 32.5%;
+    left: 3%;
+  }
+  #autoRotate {
+    bottom: 22.5%;
+    right: 82.5%;
   }
 }
 @media (min-width: 768px) and (orientation: landscape) {
+  #pattern {
+    left: 67.5%;
+    width: 17.5%;
+  }
+  #table {
+    right: 1%;
+    width: 15%;
+  }
   #lights {
-    top: 9.5%;
-    left: 20%;
+    bottom: 45%;
+    left: 3%;
   }
   #autoRotate {
-    top: 70%;
-    right: 1%;
+    bottom: 20%;
+    right: 83%;
   }
 }
 @media (min-width: 992px) {
+  #pattern {
+    top: 10%;
+    left: 3%;
+    width: 17.5%;
+  }
   #lights {
-    top: 45%;
+    bottom: 35%;
     left: 3%;
   }
+  #table {
+    top: 10%;
+    width: 12.5%;
+  }
   #autoRotate {
-    top: 30%;
-    right: 1%;
+    bottom: 20%;
+    right: 87%;
   }
 }
-@media (min-width: 1290px) {
+@media (min-width: 1280px) {
   #table {
-    top: 7%;
-    left: 12.5%;
+    top: 10%;
+    right: 5%;
   }
   #autoRotate {
-    top: 53%;
-    left: 3%;
+    bottom: 25%;
+    right: 89%;
   }
   #lights {
-    top: 42%;
+    bottom: 37.5%;
     left: 3%;
+  }
+}
+@media (min-width: 1680px) {
+  #pattern {
+    width: 8%;
+  }
+  #table {
+    width: 6%;
+    right: 82%;
+  }
+  #autoRotate {
+    right: 91.5%;
   }
 }
