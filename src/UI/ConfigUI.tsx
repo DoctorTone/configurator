@@ -42,7 +42,7 @@ const ConfigUI = () => {
     <>
       <div id="autoRotate" className="panel">
         <FormLabel sx={{ fontWeight: "bold", fontSize: "h6.fontSize" }}>
-          AutoRotate
+          Auto-rotate
         </FormLabel>
         <div>
           <Switch sx={{ ml: 2 }} onChange={toggleRotate} color="primary" />
@@ -127,7 +127,7 @@ const ConfigUI = () => {
           className="buttonGroup"
         >
           <div>
-            <FormLabel className="buttonText">Round</FormLabel>
+            <FormLabel className="buttonText">Table</FormLabel>
             <ToggleButton
               className="roundedButton"
               sx={{ mb: 1 }}
